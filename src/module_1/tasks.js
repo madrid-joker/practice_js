@@ -99,7 +99,7 @@ const numbers = [];
 let length = max - min + 1;
 let counter = min - 1;
     // Change code below this line
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) { // for (let counter = min; counter < length; counter++)
         counter += 1;
         numbers.push(counter);
     }    
@@ -134,8 +134,36 @@ let array = [];
   
    // Change code above this line
   } 
+
+function getEvenNumbers(start, end) {
+    // Change code below this line
+let array = [];
+
+for (let counter = start; counter <= end; counter++) {
+        if (counter % 2 == 0) {
+            array.push(counter);
+        }
+}
+
+return array;
+     // Change code above this line
+}
+
+function includes(array, value) {// Task #32 clarify to Nazar about optimization
+    // Change code below this line
+let bool = false;
+    for (const i of array) {
+    if (i === value) {
+        bool = true;
+        break;
+    } 
+}
+return bool; 
+
+    // Change code above this line
+  }
+
 module.exports = function() {
-console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]))
-console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]))
-console.log(getCommonElements([1, 2, 3], [10, 20, 30]))
+console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"))
+console.log(includes([1, 2, 3, 4, 5], 17))
 }
